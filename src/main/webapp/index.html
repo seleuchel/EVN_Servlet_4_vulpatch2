@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="UTF-8">
+	<body>
+
+	안녕<br />
+
+	<!-- GET request -->	
+	<a href="/test?str=반가워용">누르기</a><br />
+		
+	<!-- GET form -->
+	<form action="test">
+		<input type="text" name="str" />
+		<input type="submit" value="입력값보내기" />
+	</form>
+	
+	<!--  POST form -->
+	<form action="test2" method="post">
+		<div>
+			<label>데이터1:</label><input type="text" name="p1">
+		</div>
+		<div>
+			<label>데이터2:</label><input type="text" name="p2">
+		</div>
+			<div>
+			<input type="submit" name="제출">
+		</div>
+	</form>
+	
+	<form action="cookie" >
+		<input type="text" name="v">
+		<input type="submit" name="sb" value="1번누름">
+		<input type="submit" name="sb" value="2번누름">
+		<input type="submit" name="sb" value="종료">
+
+	</form>
+
+	<form action="cookie2" >
+		<input type="text" name="v">
+		<input type="submit" name="sb" value="쿠키저장">
+		<input type="submit" name="sb" value="쿠키저장">
+		<input type="submit" name="sb" value="종료">
+
+	</form>
+	
+	
+	</body>
+</html>
