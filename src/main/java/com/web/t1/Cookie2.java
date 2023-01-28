@@ -29,6 +29,8 @@ public class Cookie2 extends HttpServlet {
 		// set cookie
 		Cookie vCookie = new Cookie("v", str);
 		Cookie sbCookie = new Cookie("sb", str2);
+		vCookie.setPath("/cookie2"); //쿠키 경로 고정 - 해당 주소 요청시에만 전달
+		sbCookie.setPath("/cookie2"); //쿠키 경로 고정 - 해당 주소 요청시에만 전달
 		
 		// 상태 저장
 		if(str2.equals("쿠키저장")) {
