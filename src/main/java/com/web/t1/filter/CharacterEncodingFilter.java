@@ -18,7 +18,8 @@ public class CharacterEncodingFilter implements Filter {
 
 		System.out.println("before fileter");
 		arg0.setCharacterEncoding("UTF-8");
-		arg2.doFilter(arg0, arg1);
+	//	arg1.setHeader("Cache-Control","no-cache");
+		arg2.doFilter(arg0, arg1); // 넘기기 ㄴ
 		System.out.println("after fileter");
 		
 		

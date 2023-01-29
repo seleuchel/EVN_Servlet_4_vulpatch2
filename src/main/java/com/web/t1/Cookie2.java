@@ -30,25 +30,38 @@ public class Cookie2 extends HttpServlet {
 		Cookie vCookie = new Cookie("v", str);
 		Cookie sbCookie = new Cookie("sb", str2);
 		vCookie.setPath("/cookie2"); //쿠키 경로 고정 - 해당 주소 요청시에만 전달
+		vCookie.setMaxAge(24*60*60);
 		sbCookie.setPath("/cookie2"); //쿠키 경로 고정 - 해당 주소 요청시에만 전달
 		
 		// 상태 저장
 		if(str2.equals("쿠키저장")) {
 			res.addCookie(vCookie);
 			res.addCookie(sbCookie);
+			res.setHeader("Cache-Control", "no-store");
+			res.setHeader("Pragma", "no-cache");
 		}else {
+			
+			
+		if(req.getProtocol().equals("HTTP/1.1"))
+			res.setHeader("Cache-Control", "no-cache");
 	
 		String cc1 = "";
 		
 		for(Cookie c :cookie_arr) {
-			if(c.getName().equals("v"))
+			if(c.getName().equals("v")) {
 				str = c.getValue();
-			if(c.getName().equals("sb"))
-				str2 = c.getValue();
+				out.println("현재저장된 쿠키 v : "+str);
+			}
 		}
-			
-		out.println("현재저장된 쿠키 v1 : "+str);
-		out.println("현재저장된 쿠키 sb : "+str2);
+
+		for(Cookie c :cookie_arr) {
+			if(c.getName().equals("sb")) {
+				str2 = c.getValue();
+				out.println("현재저장된 쿠키 sb : "+str2);
+			}
+		}
+		
+		
 		
 		}
 		
