@@ -37,5 +37,10 @@
     <url-pattern>/test</url-pattern>
   </servlet-mapping>
  -->
+ <!-- 에러정보 노출 차단 -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.html</location>
+	</error-page>
 
 </web-app>
