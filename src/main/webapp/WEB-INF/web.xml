@@ -29,7 +29,9 @@
   <filter>
     <filter-name>HeaderSecurityFilter</filter-name>
     <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+  	
   </filter>
+
 
   <filter-mapping>
     <filter-name>HeaderSecurityFilter</filter-name>
