@@ -20,7 +20,7 @@ public class CharacterEncodingFilter implements Filter {
 		System.out.println("before fileter");
 		arg0.setCharacterEncoding("UTF-8");
 		HttpServletResponse httpResponse = (HttpServletResponse) arg1;
-	    httpResponse.setHeader("Content-Security-Policy", "default-src 'self'");	
+	    httpResponse.setHeader("Content-Security-Policy", "default-src 'self', script-src 'self'");	// 'none':all fail 'self': local ok
 		
 		//arg1.setHeader("Cache-Control","no-cache");
 		arg2.doFilter(arg0, arg1);

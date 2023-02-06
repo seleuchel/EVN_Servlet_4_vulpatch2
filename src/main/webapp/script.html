@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<header>
+		<title>script test - csp scriptsrc</title>
+		<script type="text/javascript" src="myjs.js"></script>
+		<script type="text/javascript" src="https://raw.githubusercontent.com/seleuchel/EVN_Xsite/main/myoutjs.js"></script>
+	</header>
+	<body>
+	<h1>Hello</h1>
+	<!-- cross site  -->
+	<img src="" height=200px width=200px></img> <br />
+	
+	<!--  same site ' -->
+	<img src="netcat.jpg" height=200px width=200px></img> <br />
+	
+	<!--  js inline  
+	'self' : no line script, no onclick, no script tag code.., no function in script
+	just possible 1) load js from tag 2) window.onload 3) event viewer
+	
+	if it's not possible U can usee 1) nonce 2) hash 
+	but these aren't safe on low version browser like internet ex. ...
+	-->
+	<button id="hello1" onclick="alert(123);">push me1</button> <br /> <!-- csp 'self' fail , 'none' fail -->
+	<button id="hello2" onclick="me();">push me2 sc tag</button> <br /> <!-- csp 'self' fail , 'none' fail  -->
+	<button id="btn" >push me3 sc infile - evtvwr</button> <br /> <!-- csp 'self' ok , 'none' fail  -->
+	<button id="hello4" onclick="a()">push me4 sc infile  - evtvwr </button> <br /> <!-- csp 'self' ok , 'none' fail  -->
+	<button id="hello5">push me5 sc outfile</button> <br /> <!-- csp 'self' fail , 'none' fail  -->
+	
+	
+	
+	<script>
+	function me(){
+		alert("hello,");
+	}
+	</script>
+		</body>
+</html>
