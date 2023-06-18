@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.System;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -23,6 +24,7 @@ public class Test extends HttpServlet {
 		String str = req.getParameter("str"); //string 
 		if(str != null && !str.equals(""))
 			out.println(str);
+		    System.out.println("str is "+ str);
 		
 		out.close();
 		

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html><head>
+	<meta charset="utf-8"> 
 </head>
 	<body>
 
@@ -7,6 +8,10 @@
 
 	<!-- GET request -->	
 	<a href="/test?str=반가워용">누르기</a><br />
+	<form action="test" accept-charset="utf-8" method="get">
+		<input type="text" name="str" />
+		<input type="submit" value="전송" />
+	</form>
 		
 	<!-- GET form -->
 	<form action="test">
